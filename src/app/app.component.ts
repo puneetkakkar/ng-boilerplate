@@ -1,39 +1,13 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { filter } from 'rxjs/operators';
-import { AppSandbox } from './app.sandbox';
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss'],
+  styleUrl: './app.component.css'
 })
-export class AppComponent implements OnInit, OnDestroy {
-  destroy$: Subject<boolean>;
-
-  $isOnline: Observable<boolean>;
-  $dummyEmployees: Observable<object>;
-
-  title = 'ng-boilerplate';
-
-  constructor(private appSandbox: AppSandbox) {
-    this.destroy$ = new Subject();
-    this.$isOnline = this.appSandbox.isOnline$;
-    this.$dummyEmployees = this.appSandbox.dummyEmployees$;
-  }
-
-  ngOnInit() {
-    this.appSandbox.getConnectionStatus();
-
-    this.appSandbox.getDummyData();
-
-    this.$dummyEmployees.pipe(filter(employees => typeof employees !== 'undefined')).subscribe(employees => {
-      console.log('component', employees);
-    });
-  }
-
-  ngOnDestroy() {
-    this.destroy$.next(true);
-    this.destroy$.unsubscribe();
-  }
+export class AppComponent {
+  title = 'ngx-arc-v2';
 }
