@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'ngx-arc-v2' title`, () => {
+  it(`should have the 'ngx-arc' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ngx-arc-v2');
+    expect(app.title).toEqual('ngx-arc');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, ngx-arc-v2');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, ngx-arc');
   });
 });
