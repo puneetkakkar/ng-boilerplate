@@ -9,4 +9,4 @@ export const environment = {
   json: {},
 
   paths: {},
-};
+}; 
