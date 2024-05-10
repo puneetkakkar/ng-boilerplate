@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-arc-v2": {
+    "ngx-arc": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/ngx-arc-v2",
+            "outputPath": "dist/ngx-arc",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -96,17 +96,17 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ngx-arc-v2:build:production"
+              "buildTarget": "ngx-arc:build:production"
             },
             "development": {
               "open": true,
               "liveReload": true,
-              "buildTarget": "ngx-arc-v2:build:development"
+              "buildTarget": "ngx-arc:build:development"
             },
             "hmr": {
               "hmr": true,
               "open": true,
-              "buildTarget": "ngx-arc-v2:build:hmr"
+              "buildTarget": "ngx-arc:build:hmr"
             }
           },
           "defaultConfiguration": "development"
@@ -114,7 +114,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "ngx-arc-v2:build"
+            "buildTarget": "ngx-arc:build"
           }
         },
         "test": {

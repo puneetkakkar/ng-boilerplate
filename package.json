@@ -1,5 +1,5 @@
 {
-  "name": "ngx-arc-v2",
+  "name": "ngx-arc",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -15,7 +15,7 @@
     "serve:client:stage": "ng serve --configuration staging",
     "serve:client:dev": "ng serve --configuration development",
     "serve:client:hmr": "ng serve --configuration hmr",
-    "serve:ssr:ngx-arc-v2": "node dist/ngx-arc-v2/server/server.mjs"
+    "serve:ssr:ngx-arc": "node dist/ngx-arc/server/server.mjs"
   },
   "private": true,
   "dependencies": {
