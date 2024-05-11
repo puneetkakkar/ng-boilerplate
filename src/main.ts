@@ -12,6 +12,8 @@ const bootstrap = () =>
     throw err;
   });
 
+console.log('env: ', environment.production);
+
 if (environment.production) {
   enableProdMode();
   bootstrap();
