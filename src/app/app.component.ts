@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Observable, Subject, filter } from 'rxjs';
 import { AppSandbox } from './app.sandbox';
@@ -18,7 +18,9 @@ export class AppComponent {
 
   title = 'ng-arc';
 
-  constructor(private appSandbox: AppSandbox) {
+  private appSandbox = inject(AppSandbox);
+
+  constructor() {
     this.destroy$ = new Subject();
     this.$isOnline = this.appSandbox.isOnline$;
     this.$dummyEmployees = this.appSandbox.dummyEmployees$;
