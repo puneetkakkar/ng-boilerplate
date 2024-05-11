@@ -5,6 +5,7 @@
 export const environment = {
   production: '',
   hmr: '',
+  imports: [],
 
   api: {
     baseUrl: '',
