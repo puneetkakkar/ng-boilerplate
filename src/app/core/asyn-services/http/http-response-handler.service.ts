@@ -1,5 +1,5 @@
 import { HttpErrorResponse, HttpRequest } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, throwError as observableThrowError } from 'rxjs';
 
@@ -7,7 +7,7 @@ import { Observable, throwError as observableThrowError } from 'rxjs';
   providedIn: 'root',
 })
 export class HttpResponseHandlerService {
-  constructor(private router: Router) {}
+  private router = inject(Router);
 
   /**
    * Global http error handler.
