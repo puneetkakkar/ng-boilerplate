@@ -2,7 +2,6 @@ import { HttpHeaders, HttpParams, HttpRequest, HttpResponse } from '@angular/com
 import { Observable } from 'rxjs';
 import { HttpService } from './http.service';
 
-
 export interface InitParams {
   headers?: HttpHeaders;
   reportProgress?: boolean;

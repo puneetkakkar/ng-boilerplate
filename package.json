@@ -11,11 +11,14 @@
     "lint:report": "eslint 'src/**/*.ts' --ext .ts --ignore-pattern '**/*.spec.ts' --fix --format json -o './lint-report/index.json'; prettier --write './lint-report/index.json';exit 0",
     "format:fix": "prettier --write '{src,e2e}/**/*.{js,jsx,ts,tsx,json,css,scss,md}'",
     "remove:dist": "rimraf dist",
-    "serve:client:prod": "ng serve --configuration production",
-    "serve:client:stage": "ng serve --configuration staging",
-    "serve:client:dev": "ng serve --configuration development",
-    "serve:client:hmr": "ng serve --configuration hmr",
-    "serve:ssr:ngx-arc": "node dist/ngx-arc/server/server.mjs"
+    "build:prod": "yarn remove:dist && yarn build --configuration production",
+    "build:stage": "yarn remove:dist && yarn build --configuration staging",
+    "build:dev": "yarn remove:dist && yarn build --configuration development",
+    "serve:prod": "ng serve --configuration production",
+    "serve:stage": "ng serve --configuration staging",
+    "serve:dev": "ng serve --configuration development",
+    "serve:hmr": "ng serve --configuration hmr",
+    "serve:ssr": "node dist/ngx-arc/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -52,6 +55,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "prettier": "^3.2.5",
     "typescript": "~5.4.2"
   }
 }

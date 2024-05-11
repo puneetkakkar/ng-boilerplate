@@ -22,7 +22,10 @@ export enum OSType {
 export abstract class BaseSandbox implements OnDestroy {
   protected subscriptions: Array<Subscription> = [];
 
-  constructor(protected appState$: Store<store.AppState>, @Inject(DEVICE) private device: Device) {
+  constructor(
+    protected appState$: Store<store.AppState>,
+    @Inject(DEVICE) private device: Device,
+  ) {
     /**
      * Use Following function to register events
      * to access globally
@@ -48,7 +51,7 @@ export abstract class BaseSandbox implements OnDestroy {
    * Unsubscribes from events
    */
   protected unregisterEvents() {
-    this.subscriptions.forEach(sub => sub.unsubscribe());
+    this.subscriptions.forEach((sub) => sub.unsubscribe());
   }
 
   /**
